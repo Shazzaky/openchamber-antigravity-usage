@@ -1,0 +1,36 @@
+{
+  "name": "antigravity-usage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenChamber usage card for the official Antigravity /usage groups",
+  "scripts": {
+    "build": "bunx openchamber-guest-bundle --node service/main.ts service/main.js",
+    "check": "bunx openchamber-guest-check"
+  },
+  "openchamber": {
+    "apiVersion": 1,
+    "engines": { "openchamber": ">=2.8.0" },
+    "id": "antigravity-usage",
+    "name": "Antigravity (agy)",
+    "icon": "icon.svg",
+    "contributes": {
+      "service": {
+        "entry": "service/main.js",
+        "runtime": "host",
+        "provides": ["quota"],
+        "permissions": { "exec": ["agy"] }
+      },
+      "quota": { "providers": [] }
+    }
+  },
+  "dependencies": {
+    "@openchamber/sdk": "2.8.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}
