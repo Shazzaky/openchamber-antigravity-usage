@@ -199,7 +199,7 @@ var agy = process.env.ANTIGRAVITY_USAGE_AGY?.trim() || "agy";
 var FIVE_HOURS = 5 * 60 * 60;
 var WEEK = 7 * 24 * 60 * 60;
 var READ_TIMEOUT_MS = 19000;
-var CACHE_TTL_MS = 10 * 60000;
+var CACHE_TTL_MS = 15000;
 var ERROR_CACHE_TTL_MS = 30000;
 var windowSeconds = (name) => name === "weekly" ? WEEK : FIVE_HOURS;
 var usedPercentOf = (remainingFraction) => {

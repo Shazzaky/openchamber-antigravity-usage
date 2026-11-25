@@ -27,7 +27,7 @@ The extension's host service runs:
 agy -p "/usage" --output-format json
 ```
 
-It reads `command.data.groups`, keeps the `Gemini Models` group, and returns its `5h` and `weekly` buckets in that order. Results are cached for 10 minutes and concurrent requests share one CLI run.
+It reads `command.data.groups`, keeps the `Gemini Models` group, and returns its `5h` and `weekly` buckets in that order. Results are cached for 15 seconds (to absorb rapid clicks) and concurrent requests share one CLI run.
 
 It does **not** read OAuth tokens and does **not** call Google APIs directly.
 

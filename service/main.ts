@@ -12,10 +12,10 @@ const agy = process.env.ANTIGRAVITY_USAGE_AGY?.trim() || 'agy';
 const FIVE_HOURS = 5 * 60 * 60;
 const WEEK = 7 * 24 * 60 * 60;
 const READ_TIMEOUT_MS = 19_000;
-// The CLI's /usage refreshes from the backend on every run. OpenChamber
-// refreshes visible usage every three minutes; a ten-minute cache keeps
-// automated calls to a handful per hour instead of one per refresh.
-const CACHE_TTL_MS = 10 * 60_000;
+// The CLI's /usage refreshes from the backend on every run. Keep only a
+// short guard against rapid clicks: OpenChamber's own auto-refresh is every
+// three minutes, and a manual refresh should see fresh data after 15 seconds.
+const CACHE_TTL_MS = 15_000;
 const ERROR_CACHE_TTL_MS = 30_000;
 
 type Window = {
